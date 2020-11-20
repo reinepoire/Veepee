@@ -1,0 +1,325 @@
+// import fonts
+@font-face {
+    font-family: 'Seven One Eight';
+    src: url(../fonts/SevenOneEight-Light.ttf) format('truetype');
+    font-weight: 200;
+    font-style: normal;}
+@font-face {
+    font-family: 'Seven One Eight';
+    src: url(../fonts/SevenOneEight-Book.ttf) format('truetype');
+    font-weight: 300;}
+@font-face {
+    font-family: 'Seven One Eight';
+    src: url(../fonts/SevenOneEight-Medium.ttf) format('truetype');
+    font-weight: 500;}
+@font-face {
+    font-family: 'Seven One Eight';
+    src: url(../fonts/SevenOneEight-Black.ttf) format('truetype');
+    font-weight: 800;}
+@font-face {
+    font-family: 'Seven One Eight';
+    src: url(../fonts/SevenOneEight-ExtraBold.ttf) format('truetype');
+    font-weight: 700;}
+
+
+// general settings
+$textFont: "Seven One Eight";
+$rougeEmirates: #c60c30;
+$contentWidth: 90%;
+$h3color: black;
+$grey: #333333;
+$bgColor: #efefef;
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: $textFont;
+    background-color: $bgColor;
+}
+
+// header
+header {
+    text-align: center;
+    text-transform: uppercase;
+    h1 {
+        color: $rougeEmirates;
+        margin-bottom: 0;
+    }
+    h2{
+        margin-top: 0;
+    }
+    hr {
+        width: 10%;
+        height: 5px;
+        background-color: $grey;
+        border: none;
+
+    }
+}
+
+
+// main
+main {
+    margin: 1.5rem 0;
+}
+
+.filter {
+    text-align: center;
+    width: fit-content;
+    margin: auto;
+    line-height: 2;
+    background-color: white;
+    color: #041a41;
+    .fa-sliders-h {
+        padding-left: 1rem;
+    }
+    i {
+        color: $rougeEmirates;
+    }
+    span {
+        display: inline-block;
+        padding: 0 1rem;
+        &:nth-of-type(2){
+            border-left: 1px solid $bgColor;
+        }
+    }
+
+}
+
+section {
+    display: flex;
+    width: $contentWidth;
+    margin: auto;
+    justify-content: space-between;
+    flex-flow: row wrap;
+}
+
+article {
+    width: 32%;
+    margin: 1rem 0;
+    transition: all .5s ease;
+    img {
+            width: 100%;
+            height: auto;
+    }
+    &:hover { 
+        box-shadow: 3px 5px 4px -2px rgba(192, 189, 189, 0.53);
+        .slider-container p {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+.slider-container {
+    position: relative;
+    figure {
+        margin: 0;
+        p {
+        position: absolute;
+        right: 15px;
+        bottom: 0;
+        color: white;
+        font-weight: 700;
+        text-transform: uppercase;
+        transition: all .5s;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            height: 97%;
+            width: 100%;
+            transition: all .5s ease;
+            background-color: $rougeEmirates;
+            opacity: 0;
+        }
+    }
+    .prev, .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        padding: .5rem;
+        margin-top: -1rem;
+        color: white;
+        font-weight: 700;
+        font-size: 1rem;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        &:hover, &:hover {
+        background-color: $bgColor;
+        color: black;
+      }
+    }
+    .next {
+      right: 0;
+      border-radius: 3px 0 0 3px;
+    }
+    &:hover .overlay {
+        background-color: $rougeEmirates;
+        opacity: .3;
+    }
+}
+
+.hotelInfo {
+        background-color: white;
+        display: flex;
+        margin-top: -10px;
+        padding: 1rem;
+        justify-content: space-between;
+        line-height: 1.5;
+        border-radius: 0 0 5px 5px;
+        h3.country {
+            margin: 0;
+            display: inline;
+            &::after {
+                content: " -";
+            }
+        }
+        h4 {
+            margin: 0;
+
+        }
+        .label {
+            font-weight: 200;
+        }
+        .label.three::after {
+            content: " \2605 \2605 \2605";
+            font-size: .8rem;
+        }
+        .label.four::after {
+            content: " \2605 \2605 \2605 \2605";
+            font-size: .8rem;
+        }
+        .place {
+            display: inline;
+            font-weight: 300;
+        }
+        button {
+            align-self: center;
+            background-color: $rougeEmirates;
+            border: none;
+            padding: 1rem;
+            padding: .5rem .75rem;
+            transition: all .5s linear;
+            a {
+                color: white;
+            }
+        }
+        span {
+            display: inline-block;
+            margin-right: .5rem;
+            padding: 0 0.5rem;
+            font-size: .8rem;
+            text-transform: uppercase;
+            font-weight: 200;
+        }
+        .premium {
+            background-color: black;
+            color: white;
+        }
+        .option {
+            background-color: goldenrod;
+            color: white;
+        }
+
+
+}
+// main
+
+
+// footer
+footer {
+    width: $contentWidth;
+    margin: auto;
+    text-align: center;
+    background-color: $grey;
+    position: sticky;
+    bottom: 0;
+    padding: 1rem;
+    color: white;
+    line-height: 1.5;
+    .progress-bar {
+        height: 5px;
+        background: $rougeEmirates;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    p, hr {
+        margin: 0;
+    }
+    hr {
+     width: 10vw;
+     margin: auto;
+     background-color: $rougeEmirates;
+     height: 5px;
+     border: none;
+     margin-top: .5rem;
+    }
+    p {
+        text-transform: uppercase;
+        font-weight: 300;
+        span {
+            font-weight: 700;
+        }
+    }
+}
+
+
+
+
+
+
+
+// Responsive css
+/* Extra small devices */
+@media (max-width: 575.98px) {
+    section {
+        flex-flow: column wrap;
+        article {
+            width: 100%;
+            margin: 1rem auto;
+        }
+    }
+}
+
+/* // Small devices */
+@media (min-width: 576px) and (max-width: 767.98px) {
+    section {
+        flex-flow: column wrap;
+        article {
+            width: 100%;
+            margin: 1rem auto;
+        }
+    }
+  }
+
+  /* // Medium devices */
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    article {
+        width: 49%;
+        margin: 1rem 0;
+    }
+  }
+
+  /* // Large devices */
+  @media (min-width: 992px) and (max-width: 1199.98px) {
+    article {
+        width: 49%;
+        margin: 1rem 0;
+    }
+  }
+
+  /* // Extra large devices */
+  @media (min-width: 1200px) {
+
+  }
+// / Responsive css
+
+
+
+
+
+

@@ -1,0 +1,290 @@
+@charset "UTF-8";
+@font-face {
+  font-family: "Seven One Eight";
+  src: url(../fonts/SevenOneEight-Light.ttf) format("truetype");
+  font-weight: 200;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Seven One Eight";
+  src: url(../fonts/SevenOneEight-Book.ttf) format("truetype");
+  font-weight: 300;
+}
+@font-face {
+  font-family: "Seven One Eight";
+  src: url(../fonts/SevenOneEight-Medium.ttf) format("truetype");
+  font-weight: 500;
+}
+@font-face {
+  font-family: "Seven One Eight";
+  src: url(../fonts/SevenOneEight-Black.ttf) format("truetype");
+  font-weight: 800;
+}
+@font-face {
+  font-family: "Seven One Eight";
+  src: url(../fonts/SevenOneEight-ExtraBold.ttf) format("truetype");
+  font-weight: 700;
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Seven One Eight";
+  background-color: #efefef;
+}
+
+header {
+  text-align: center;
+  text-transform: uppercase;
+}
+header h1 {
+  color: #c60c30;
+  margin-bottom: 0;
+}
+header h2 {
+  margin-top: 0;
+}
+header hr {
+  width: 10%;
+  height: 5px;
+  background-color: #333333;
+  border: none;
+}
+
+main {
+  margin: 1.5rem 0;
+}
+
+.filter {
+  text-align: center;
+  width: fit-content;
+  margin: auto;
+  line-height: 2;
+  background-color: white;
+  color: #041a41;
+}
+.filter .fa-sliders-h {
+  padding-left: 1rem;
+}
+.filter i {
+  color: #c60c30;
+}
+.filter span {
+  display: inline-block;
+  padding: 0 1rem;
+}
+.filter span:nth-of-type(2) {
+  border-left: 1px solid #efefef;
+}
+
+section {
+  display: flex;
+  width: 90%;
+  margin: auto;
+  justify-content: space-between;
+  flex-flow: row wrap;
+}
+
+article {
+  width: 32%;
+  margin: 1rem 0;
+  transition: all 0.5s ease;
+}
+article img {
+  width: 100%;
+  height: auto;
+}
+article:hover {
+  box-shadow: 3px 5px 4px -2px rgba(192, 189, 189, 0.53);
+}
+article:hover .slider-container p {
+  font-size: 1.1rem;
+}
+
+.slider-container {
+  position: relative;
+}
+.slider-container figure {
+  margin: 0;
+}
+.slider-container figure p {
+  position: absolute;
+  right: 15px;
+  bottom: 0;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: all 0.5s;
+}
+.slider-container figure .overlay {
+  position: absolute;
+  top: 0;
+  height: 97%;
+  width: 100%;
+  transition: all 0.5s ease;
+  background-color: #c60c30;
+  opacity: 0;
+}
+.slider-container .prev, .slider-container .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  padding: 0.5rem;
+  margin-top: -1rem;
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+.slider-container .prev:hover, .slider-container .prev:hover, .slider-container .next:hover, .slider-container .next:hover {
+  background-color: #efefef;
+  color: black;
+}
+.slider-container .next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+.slider-container:hover .overlay {
+  background-color: #c60c30;
+  opacity: 0.3;
+}
+
+.hotelInfo {
+  background-color: white;
+  display: flex;
+  margin-top: -10px;
+  padding: 1rem;
+  justify-content: space-between;
+  line-height: 1.5;
+  border-radius: 0 0 5px 5px;
+}
+.hotelInfo h3.country {
+  margin: 0;
+  display: inline;
+}
+.hotelInfo h3.country::after {
+  content: " -";
+}
+.hotelInfo h4 {
+  margin: 0;
+}
+.hotelInfo .label {
+  font-weight: 200;
+}
+.hotelInfo .label.three::after {
+  content: " ★★★";
+  font-size: 0.8rem;
+}
+.hotelInfo .label.four::after {
+  content: " ★★★★";
+  font-size: 0.8rem;
+}
+.hotelInfo .place {
+  display: inline;
+  font-weight: 300;
+}
+.hotelInfo button {
+  align-self: center;
+  background-color: #c60c30;
+  border: none;
+  padding: 1rem;
+  padding: 0.5rem 0.75rem;
+  transition: all 0.5s linear;
+}
+.hotelInfo button a {
+  color: white;
+}
+.hotelInfo span {
+  display: inline-block;
+  margin-right: 0.5rem;
+  padding: 0 0.5rem;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  font-weight: 200;
+}
+.hotelInfo .premium {
+  background-color: black;
+  color: white;
+}
+.hotelInfo .option {
+  background-color: goldenrod;
+  color: white;
+}
+
+footer {
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  background-color: #333333;
+  position: sticky;
+  bottom: 0;
+  padding: 1rem;
+  color: white;
+  line-height: 1.5;
+}
+footer .progress-bar {
+  height: 5px;
+  background: #c60c30;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+footer p, footer hr {
+  margin: 0;
+}
+footer hr {
+  width: 10vw;
+  margin: auto;
+  background-color: #c60c30;
+  height: 5px;
+  border: none;
+  margin-top: 0.5rem;
+}
+footer p {
+  text-transform: uppercase;
+  font-weight: 300;
+}
+footer p span {
+  font-weight: 700;
+}
+
+/* Extra small devices */
+@media (max-width: 575.98px) {
+  section {
+    flex-flow: column wrap;
+  }
+  section article {
+    width: 100%;
+    margin: 1rem auto;
+  }
+}
+/* // Small devices */
+@media (min-width: 576px) and (max-width: 767.98px) {
+  section {
+    flex-flow: column wrap;
+  }
+  section article {
+    width: 100%;
+    margin: 1rem auto;
+  }
+}
+/* // Medium devices */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  article {
+    width: 49%;
+    margin: 1rem 0;
+  }
+}
+/* // Large devices */
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  article {
+    width: 49%;
+    margin: 1rem 0;
+  }
+}
+/* // Extra large devices */
+
+/*# sourceMappingURL=style.css.map */
